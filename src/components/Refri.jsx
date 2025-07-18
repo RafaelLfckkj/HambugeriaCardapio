@@ -16,7 +16,7 @@ export function Refri({ nome, preco, image, title }) {
         <div className="flex items-center gap-2 justify-between mt-3">
           <p className="font-bold text-lg">{preco}</p>
           <button
-            className="bg-gray-900 px-5 rounded cursor-pointer"
+            className="bg-gray-900 px-5 rounded cursor-pointer hover:bg-green-500 duration-200"
             id="add-to-cart-btn"
             data-name={nome}
             data-price={preco}

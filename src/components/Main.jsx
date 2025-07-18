@@ -31,7 +31,7 @@ export function Main() {
           image={produto2}
           title={"Hamburger Duplo"}
           nome="Hamburger Duplo"
-          descricao="Pão levinho de fermentação natural da Trigou, burger 160g, queijo prato e maionese de casa."
+          descricao="Dois burgers suculentos com queijo derretido, pão artesanal e molho especial da casa."
           preco="R$ 32.90"
         />
 
@@ -39,7 +39,7 @@ export function Main() {
           image={produto3}
           title={"Hamburger Salad"}
           nome="Hamburger Salad"
-          descricao="Pão levinho de fermentação natural da Trigou, burger 160g, queijo prato e maionese de casa."
+          descricao="Burger artesanal com queijo, alface, tomate e molho especial no pão de fermentação natural."
           preco="R$ 32.90"
         />
 
@@ -50,13 +50,46 @@ export function Main() {
           descricao="Pão levinho de fermentação natural da Trigou, burger 160g, queijo prato e maionese de casa."
           preco="R$ 30.00"
         />
+
+        <Produtos
+          image={produto5}
+          title={"American BBQ"}
+          nome="American BBQ"
+          descricao="Hambúrguer com burger grelhado, cebola caramelizada, cheddar e molho barbecue defumado."
+          preco="R$ 35,90"
+        />
+
+        <Produtos
+          image={produto6}
+          title={"Crispy Bacon"}
+          nome="Crispy Bacon"
+          descricao="Pão artesanal, burger 160g, queijo prato, bacon crocante e maionese especial da casa."
+          preco="R$ 34,00"
+        />
+        <Produtos
+          image={produto7}
+          title={"Cheddar e Cebola"}
+          nome="Cheddar e Cebola"
+          descricao="Hambúrguer com queijo cheddar cremoso, cebola caramelizada e pão tostado na manteiga."
+          preco="R$ 29,90"
+        />
+        <Produtos
+          image={produto8}
+          title={"Verde Smash"}
+          nome="Verde Smash"
+          descricao="Burger com alface americana, rúcula, tomate fresco, queijo prato e molho caseiro no pão brioche."
+          preco="R$ 31,50"
+        />
       </main>
 
       <div className="mx-auto max-w-7xl px-2 my-2">
         <h2 className="font-bold text-3xl">Bebidas</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu-bebidas">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        id="menu-bebidas"
+      >
         <Refri
           image={bebida1}
           title={"Coca-Cola Lata"}
@@ -71,7 +104,6 @@ export function Main() {
           preco="R$ 6.00"
         />
       </div>
-
     </div>
   );
 }
