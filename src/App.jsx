@@ -10,7 +10,6 @@ export function App() {
 
   function carrinho(){
     setCarrinho(addCarrinho + 1);
-    console.log(addCarrinho);
   }
 
   return (
