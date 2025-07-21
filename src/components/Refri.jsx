@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
-export function Refri({ nome, preco, image, title }) {
+export function Refri({ nome, preco, image, title, carrinho }) {
   return (
     <div className="flex gap-2 w-full">
       <img
@@ -20,6 +20,7 @@ export function Refri({ nome, preco, image, title }) {
             id="add-to-cart-btn"
             data-name={nome}
             data-price={preco}
+            onClick={carrinho}
           >
             <FontAwesomeIcon icon={faCartPlus} className="text-white text-lg" />
           </button>

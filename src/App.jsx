@@ -6,13 +6,19 @@ import { Modal } from "./components/Modal";
 
 export function App() {
   const [modalAberto, setModalAberto] = useState(false);
+  const [addCarrinho, setCarrinho] = useState(0);
+
+  function carrinho(){
+    setCarrinho(addCarrinho + 1);
+    console.log(addCarrinho);
+  }
 
   return (
     <div>
       <Header />
-      <Main />
+      <Main adicionarAoCarrinho={carrinho} />
       <Modal aberto={modalAberto} fecharModal={() => setModalAberto(false)} />
-      <Carrinho abrirModal={() => setModalAberto(true)} />
+      <Carrinho abrirModal={() => setModalAberto(true)} addCarrinho={addCarrinho} />
     </div>
   );
 }

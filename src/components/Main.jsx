@@ -11,7 +11,7 @@ import produto8 from "../assets/hamb-8.png";
 import bebida1 from "../assets/refri-1.png";
 import bebida2 from "../assets/refri-2.png";
 
-export function Main() {
+export function Main({ adicionarAoCarrinho }) {
   return (
     <div>
       <h2 className="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
@@ -20,6 +20,7 @@ export function Main() {
 
       <main className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
         <Produtos
+          carrinho={adicionarAoCarrinho}
           image={produto1}
           title={"Hamburger Smash"}
           nome="Hamburger Smash"
@@ -28,6 +29,7 @@ export function Main() {
         />
 
         <Produtos
+          carrinho={adicionarAoCarrinho}
           image={produto2}
           title={"Hamburger Duplo"}
           nome="Hamburger Duplo"
@@ -36,6 +38,7 @@ export function Main() {
         />
 
         <Produtos
+          carrinho={adicionarAoCarrinho}
           image={produto3}
           title={"Hamburger Salad"}
           nome="Hamburger Salad"
@@ -44,6 +47,7 @@ export function Main() {
         />
 
         <Produtos
+          carrinho={adicionarAoCarrinho}
           image={produto4}
           title={"Hamburger da Casa"}
           nome="Hamburger da Casa"
@@ -52,6 +56,7 @@ export function Main() {
         />
 
         <Produtos
+          carrinho={adicionarAoCarrinho}
           image={produto5}
           title={"American BBQ"}
           nome="American BBQ"
@@ -60,6 +65,7 @@ export function Main() {
         />
 
         <Produtos
+          carrinho={adicionarAoCarrinho}
           image={produto6}
           title={"Crispy Bacon"}
           nome="Crispy Bacon"
@@ -67,6 +73,7 @@ export function Main() {
           preco="R$ 34,00"
         />
         <Produtos
+          carrinho={adicionarAoCarrinho}
           image={produto7}
           title={"Cheddar e Cebola"}
           nome="Cheddar e Cebola"
@@ -74,6 +81,7 @@ export function Main() {
           preco="R$ 29,90"
         />
         <Produtos
+          carrinho={adicionarAoCarrinho}
           image={produto8}
           title={"Verde Smash"}
           nome="Verde Smash"
@@ -91,6 +99,7 @@ export function Main() {
         id="menu-bebidas"
       >
         <Refri
+          carrinho={adicionarAoCarrinho}
           image={bebida1}
           title={"Coca-Cola Lata"}
           nome="Coca-Cola Lata"
@@ -98,6 +107,7 @@ export function Main() {
         />
 
         <Refri
+          carrinho={adicionarAoCarrinho}
           image={bebida2}
           title={"Guaraná Lata"}
           nome="Guaraná Lata"
