@@ -11,7 +11,9 @@ import produto8 from "../assets/hamb-8.png";
 import bebida1 from "../assets/refri-1.png";
 import bebida2 from "../assets/refri-2.png";
 
-export function Main({ adicionarAoCarrinho }) {
+export function Main({ adicionarAoCarrinho, preco }) {
+
+
   return (
     <div>
       <h2 className="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">

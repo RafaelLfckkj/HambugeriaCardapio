@@ -1,4 +1,8 @@
-export function Modal({ aberto, fecharModal }) {
+export function Modal({ aberto, fecharModal, preco }) {
+  function calcularTotal() {
+    
+  }
+
   return (
     <div
       className={`bg-black/60 w-full h-full fixed top-0 left-0 z-99 items-center justify-center ${
@@ -11,7 +15,7 @@ export function Modal({ aberto, fecharModal }) {
         <div id="cart-items" className="flex justify-between mb-2 flex-col"></div>
 
         <p className="font-bold">
-          Total: <span id="cart-total">0.00</span>
+          Total: <span id="cart-total">{calcularTotal()}</span>
         </p>
 
         <p className="font-bold mt-4">Endereço de entrega:</p>
