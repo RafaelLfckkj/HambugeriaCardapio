@@ -9,23 +9,32 @@ export function App() {
   const [addCarrinho, setCarrinho] = useState(0);
   const [preco, setPreco] = useState([]);
 
-  function carrinho(){
-    // Somando no carrinho a quantidade de produtos
+  function carrinho() {
+    // Somando a quantidade de produtos no carrinho
     setCarrinho(addCarrinho + 1);
-
   }
-  
-  // somando o valor total dos produtos no modal - ou tentando
-  function ValorTotal(preco) {
-  setCarrinho(prev => [...prev, { nome, preco }]);
-}
+
+  const receberProduto = (nome, preco) => {
+    setPreco((prev) => [...prev, preco]);
+  };
+
 
   return (
     <div>
       <Header />
-      <Main adicionarAoCarrinho={carrinho} preco={preco} />
-      <Modal aberto={modalAberto} fecharModal={() => setModalAberto(false)} />
-      <Carrinho abrirModal={() => setModalAberto(true)} addCarrinho={addCarrinho} />
+      <Main
+        adicionarAoCarrinho={carrinho}
+        onProdutoSelecionado={receberProduto}
+      />
+      <Modal
+        aberto={modalAberto}
+        fecharModal={() => setModalAberto(false)}
+        preco={preco}
+      />
+      <Carrinho
+        abrirModal={() => setModalAberto(true)}
+        addCarrinho={addCarrinho}
+      />
     </div>
   );
 }

@@ -11,9 +11,7 @@ import produto8 from "../assets/hamb-8.png";
 import bebida1 from "../assets/refri-1.png";
 import bebida2 from "../assets/refri-2.png";
 
-export function Main({ adicionarAoCarrinho, preco }) {
-
-
+export function Main({ adicionarAoCarrinho, onProdutoSelecionado }) {
   return (
     <div>
       <h2 className="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
@@ -27,7 +25,8 @@ export function Main({ adicionarAoCarrinho, preco }) {
           title={"Hamburger Smash"}
           nome="Hamburger Smash"
           descricao="Pão levinho de fermentação natural da Trigou, burger 160g, queijo prato e maionese de casa."
-          preco="R$ 18.90"
+          preco="R$ 18,90"
+          onSelecionar={() => onProdutoSelecionado("Hambúrguer Smash", 18.90)}
         />
 
         <Produtos
@@ -36,7 +35,8 @@ export function Main({ adicionarAoCarrinho, preco }) {
           title={"Hamburger Duplo"}
           nome="Hamburger Duplo"
           descricao="Dois burgers suculentos com queijo derretido, pão artesanal e molho especial da casa."
-          preco="R$ 32.90"
+          preco="R$ 32,90"
+          onSelecionar={() => onProdutoSelecionado("Hambúrguer Duplo", 32.90)}
         />
 
         <Produtos
@@ -45,7 +45,8 @@ export function Main({ adicionarAoCarrinho, preco }) {
           title={"Hamburger Salad"}
           nome="Hamburger Salad"
           descricao="Burger artesanal com queijo, alface, tomate e molho especial no pão de fermentação natural."
-          preco="R$ 32.90"
+          preco="R$ 32,90"
+          onSelecionar={() => onProdutoSelecionado("Hambúrguer Salad", 32.90)}
         />
 
         <Produtos
@@ -54,7 +55,8 @@ export function Main({ adicionarAoCarrinho, preco }) {
           title={"Hamburger da Casa"}
           nome="Hamburger da Casa"
           descricao="Pão levinho de fermentação natural da Trigou, burger 160g, queijo prato e maionese de casa."
-          preco="R$ 30.00"
+          preco="R$ 30,00"
+          onSelecionar={() => onProdutoSelecionado("Hambúrguer da Casa", 30.00)}
         />
 
         <Produtos
@@ -64,6 +66,7 @@ export function Main({ adicionarAoCarrinho, preco }) {
           nome="American BBQ"
           descricao="Hambúrguer com burger grelhado, cebola caramelizada, cheddar e molho barbecue defumado."
           preco="R$ 35,90"
+          onSelecionar={() => onProdutoSelecionado("American BBQ", 35.90)}
         />
 
         <Produtos
@@ -73,6 +76,7 @@ export function Main({ adicionarAoCarrinho, preco }) {
           nome="Crispy Bacon"
           descricao="Pão artesanal, burger 160g, queijo prato, bacon crocante e maionese especial da casa."
           preco="R$ 34,00"
+          onSelecionar={() => onProdutoSelecionado("Crispy Bacon", 34.00)}
         />
         <Produtos
           carrinho={adicionarAoCarrinho}
@@ -81,6 +85,7 @@ export function Main({ adicionarAoCarrinho, preco }) {
           nome="Cheddar e Cebola"
           descricao="Hambúrguer com queijo cheddar cremoso, cebola caramelizada e pão tostado na manteiga."
           preco="R$ 29,90"
+          onSelecionar={() => onProdutoSelecionado("Cheddar e Cebola", 29.90)}
         />
         <Produtos
           carrinho={adicionarAoCarrinho}
@@ -89,6 +94,7 @@ export function Main({ adicionarAoCarrinho, preco }) {
           nome="Verde Smash"
           descricao="Burger com alface americana, rúcula, tomate fresco, queijo prato e molho caseiro no pão brioche."
           preco="R$ 31,50"
+          onSelecionar={() => onProdutoSelecionado("Verde Smash", 31.50)}
         />
       </main>
 
@@ -105,7 +111,8 @@ export function Main({ adicionarAoCarrinho, preco }) {
           image={bebida1}
           title={"Coca-Cola Lata"}
           nome="Coca-Cola Lata"
-          preco="R$ 6.00"
+          preco="R$ 6,00"
+          onSelecionar={() => onProdutoSelecionado("Coca-Cola Lata", 6.00)}
         />
 
         <Refri
@@ -113,7 +120,8 @@ export function Main({ adicionarAoCarrinho, preco }) {
           image={bebida2}
           title={"Guaraná Lata"}
           nome="Guaraná Lata"
-          preco="R$ 6.00"
+          preco="R$ 6,00"
+          onSelecionar={() => onProdutoSelecionado("Guaraná Lata", 6.00)}
         />
       </div>
     </div>

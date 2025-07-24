@@ -1,6 +1,11 @@
 export function Modal({ aberto, fecharModal, preco }) {
-  function calcularTotal() {
-    
+
+  function ValorTotal() {
+   let total = 0;
+   preco.forEach((item) => {
+     total += item;
+   });
+   return total.toFixed(2);
   }
 
   return (
@@ -12,10 +17,13 @@ export function Modal({ aberto, fecharModal, preco }) {
       <div className="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
         <h2 className="text-2xl font-bold text-center mb-2">Meu Carrinho</h2>
 
-        <div id="cart-items" className="flex justify-between mb-2 flex-col"></div>
+        <div
+          id="cart-items"
+          className="flex justify-between mb-2 flex-col"
+        ></div>
 
         <p className="font-bold">
-          Total: <span id="cart-total">{calcularTotal()}</span>
+          Total: <span id="cart-total">{ValorTotal()}</span>
         </p>
 
         <p className="font-bold mt-4">Endereço de entrega:</p>
@@ -30,7 +38,11 @@ export function Modal({ aberto, fecharModal, preco }) {
         </p>
 
         <div className="flex items-center justify-between mt-4 w-full ">
-          <button id="close-modal-btn" onClick={fecharModal} className="cursor-pointer">
+          <button
+            id="close-modal-btn"
+            onClick={fecharModal}
+            className="cursor-pointer"
+          >
             Fechar
           </button>
           <button
