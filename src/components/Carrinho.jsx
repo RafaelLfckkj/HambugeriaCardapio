@@ -3,7 +3,10 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 export function Carrinho({ abrirModal, addCarrinho }) {
   return (
-    <footer className="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center cursor-pointer hover:bg-red-400 duration-300">
+    <footer
+      onClick={abrirModal}
+      className="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center cursor-pointer hover:bg-red-400 duration-300"
+    >
       <button
         onClick={abrirModal}
         className="flex items-center gap-2 text-white font-bold cursor-pointer"

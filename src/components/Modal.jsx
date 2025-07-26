@@ -1,11 +1,39 @@
-export function Modal({ aberto, fecharModal, preco }) {
+export function Modal({ aberto, fecharModal, preco, setPreco }) {
+  function FinalizarPedido() {
+    alert("Pedido finalizado com sucesso!");
+    window.location.reload();
+  }
 
   function ValorTotal() {
-   let total = 0;
-   preco.forEach((item) => {
-     total += item;
-   });
-   return total.toFixed(2);
+    return preco.reduce((acc, item) => acc + item.preco, 0).toFixed(2);
+  }
+
+  function agruparProdutos() {
+    const agrupado = {};
+
+    preco.forEach((item) => {
+      if (agrupado[item.nome]) {
+        agrupado[item.nome].qtd += 1;
+        agrupado[item.nome].total += item.preco;
+      } else {
+        agrupado[item.nome] = {
+          nome: item.nome,
+          qtd: 1,
+          total: item.preco,
+        };
+      }
+    });
+
+    return Object.values(agrupado);
+  }
+
+  function removerProduto(nome) {
+    const index = preco.findIndex((item) => item.nome === nome);
+    if (index !== -1) {
+      const novoArray = [...preco];
+      novoArray.splice(index, 1);
+      setPreco(novoArray);
+    }
   }
 
   return (
@@ -17,10 +45,24 @@ export function Modal({ aberto, fecharModal, preco }) {
       <div className="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
         <h2 className="text-2xl font-bold text-center mb-2">Meu Carrinho</h2>
 
-        <div
-          id="cart-items"
-          className="flex justify-between mb-2 flex-col"
-        ></div>
+        <div id="cart-items" className="flex justify-between mb-2 flex-col">
+          {agruparProdutos().map((item, index) => (
+            <div key={index} className="flex justify-between items-center mb-2">
+              <span>
+                {item.nome} - Qtd: {item.qtd}
+              </span>
+              <div className="flex items-center gap-2">
+                <span>R$ {item.total.toFixed(2)}</span>
+                <button
+                  onClick={() => removerProduto(item.nome)}
+                  className="bg-red-500 text-white px-2 py-1 rounded text-sm cursor-pointer hover:bg-red-600 duration-200"
+                >
+                  Remover
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
 
         <p className="font-bold">
           Total: <span id="cart-total">{ValorTotal()}</span>
@@ -48,6 +90,7 @@ export function Modal({ aberto, fecharModal, preco }) {
           <button
             id="checkout-btn"
             className="bg-green-500 text-white px-4 py-1 rounded cursor-pointer"
+            onClick={FinalizarPedido}
           >
             Finalizar Pedido
           </button>

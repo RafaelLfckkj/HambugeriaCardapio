@@ -1,7 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
-export function Produtos({ nome, descricao, preco, image, title, carrinho, onSelecionar }) {
+export function Produtos({
+  nome,
+  descricao,
+  preco,
+  image,
+  title,
+  carrinho,
+  onSelecionar,
+}) {
   return (
     <div className="flex gap-2">
       <img

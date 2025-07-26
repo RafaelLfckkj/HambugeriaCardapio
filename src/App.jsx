@@ -6,18 +6,15 @@ import { Modal } from "./components/Modal";
 
 export function App() {
   const [modalAberto, setModalAberto] = useState(false);
-  const [addCarrinho, setCarrinho] = useState(0);
+
   const [preco, setPreco] = useState([]);
 
-  function carrinho() {
-    // Somando a quantidade de produtos no carrinho
-    setCarrinho(addCarrinho + 1);
-  }
+  const carrinho = () => {};
+  const quantidadeCarrinho = preco.length;
 
   const receberProduto = (nome, preco) => {
-    setPreco((prev) => [...prev, preco]);
+    setPreco((prev) => [...prev, { nome, preco }]);
   };
-
 
   return (
     <div>
@@ -30,10 +27,11 @@ export function App() {
         aberto={modalAberto}
         fecharModal={() => setModalAberto(false)}
         preco={preco}
+        setPreco={setPreco}
       />
       <Carrinho
         abrirModal={() => setModalAberto(true)}
-        addCarrinho={addCarrinho}
+        addCarrinho={quantidadeCarrinho}
       />
     </div>
   );
