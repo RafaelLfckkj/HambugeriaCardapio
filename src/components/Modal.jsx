@@ -1,5 +1,22 @@
-export function Modal({ aberto, fecharModal, preco, setPreco }) {
+export function Modal({ aberto, fecharModal, preco, setPreco, lojaAberta }) {
   function FinalizarPedido() {
+    const enderecoInput = document.getElementById("address");
+    const avisoEndereco = document.getElementById("address-warn");
+
+    if (!enderecoInput.value.trim()) {
+      enderecoInput.classList.add("border-red-500");
+      avisoEndereco.classList.remove("hidden");
+      return;
+    } else {
+      enderecoInput.classList.remove("border-red-500");
+      avisoEndereco.classList.add("hidden");
+    }
+
+    if (!lojaAberta) {
+      alert("Desculpe, nossa loja está fechada no momento.");
+      return;
+    }
+
     alert("Pedido finalizado com sucesso!");
     window.location.reload();
   }

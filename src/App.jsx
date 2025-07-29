@@ -9,6 +9,8 @@ export function App() {
 
   const [preco, setPreco] = useState([]);
 
+  const [lojaAberta, setLojaAberta] = useState(false);
+
   const carrinho = () => {};
   const quantidadeCarrinho = preco.length;
 
@@ -28,6 +30,7 @@ export function App() {
         fecharModal={() => setModalAberto(false)}
         preco={preco}
         setPreco={setPreco}
+        lojaAberta={lojaAberta}
       />
       <Carrinho
         abrirModal={() => setModalAberto(true)}
