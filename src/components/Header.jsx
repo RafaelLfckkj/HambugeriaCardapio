@@ -2,7 +2,7 @@ import logo from "../assets/hamb-1.png";
 import bg from "../assets/bg.png";
 import { useEffect, useState } from "react";
 
-export function Header() {
+export function Header( ) {
   const [lojaAberta, setLojaAberta] = useState(false);
 
   useEffect(() => {

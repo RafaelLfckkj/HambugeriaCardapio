@@ -1,4 +1,4 @@
-export function Modal({ aberto, fecharModal, preco, setPreco, lojaAberta }) {
+export function Modal({ aberto, fecharModal, preco, setPreco }) {
   function FinalizarPedido() {
     const enderecoInput = document.getElementById("address");
     const avisoEndereco = document.getElementById("address-warn");
@@ -12,10 +12,6 @@ export function Modal({ aberto, fecharModal, preco, setPreco, lojaAberta }) {
       avisoEndereco.classList.add("hidden");
     }
 
-    if (!lojaAberta) {
-      alert("Desculpe, nossa loja está fechada no momento.");
-      return;
-    }
 
     alert("Pedido finalizado com sucesso!");
     window.location.reload();
