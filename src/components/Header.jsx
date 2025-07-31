@@ -1,18 +1,14 @@
 import logo from "../assets/hamb-1.png";
 import bg from "../assets/bg.png";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export function Header( ) {
-  const [lojaAberta, setLojaAberta] = useState(false);
-
+export function Header({ setLojaAberta, lojaAberta }) {
   useEffect(() => {
     const agora = new Date();
     const hora = agora.getHours();
-
     const aberta = hora >= 9 && hora < 19;
-
     setLojaAberta(aberta);
-  }, []);
+  }, [setLojaAberta]);
 
   return (
     <header

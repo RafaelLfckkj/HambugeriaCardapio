@@ -8,7 +8,7 @@ export function App() {
   const [modalAberto, setModalAberto] = useState(false);
 
   const [preco, setPreco] = useState([]);
-
+  const [lojaAberta, setLojaAberta] = useState(false);
 
   const carrinho = () => {};
   const quantidadeCarrinho = preco.length;
@@ -19,7 +19,7 @@ export function App() {
 
   return (
     <div>
-      <Header  />
+      <Header setLojaAberta={setLojaAberta} lojaAberta={lojaAberta} />
       <Main
         adicionarAoCarrinho={carrinho}
         onProdutoSelecionado={receberProduto}
@@ -29,6 +29,7 @@ export function App() {
         fecharModal={() => setModalAberto(false)}
         preco={preco}
         setPreco={setPreco}
+        lojaAberta={lojaAberta}
       />
       <Carrinho
         abrirModal={() => setModalAberto(true)}
